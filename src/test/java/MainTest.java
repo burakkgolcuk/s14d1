@@ -1,3 +1,5 @@
+import java.util.Locale;
+
 import com.workintech.cylinder.Circle;
 import com.workintech.cylinder.Cylinder;
 import com.workintech.developers.*;
@@ -13,6 +15,7 @@ import java.lang.reflect.Field;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.instanceOf;
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 
 @ExtendWith(ResultAnalyzer.class)
@@ -58,7 +61,7 @@ public class MainTest {
     @DisplayName("getArea methodu Circle sınıfında doğru çalışıyor mu?")
     @Test
     public void testGetArea() throws NoSuchFieldException {
-        assertTrue(String.format("%.2f", circle.getArea()).contains("12"));
+        assertTrue(String.format(Locale.US, "%.2f", circle.getArea()).contains("12"));
     }
 
     @DisplayName("Circle sınıf değişkenleri doğru access modifier a sahip mi ?")
@@ -78,7 +81,7 @@ public class MainTest {
     @DisplayName("getVolume methodu doğru çalışıyor mu?")
     @Test
     public void testGetVolume() throws NoSuchFieldException {
-        assertTrue(String.format("%.2f", cylinder.getVolume()).contains("25"));
+        assertTrue(String.format(Locale.US, "%.2f", cylinder.getVolume()).contains("25"));
     }
 
     @DisplayName("Rectangle sınıf değişkenleri doğru access modifier a sahip mi ?")
@@ -100,7 +103,7 @@ public class MainTest {
     @DisplayName("getArea methodu Rectangle sınıfında doğru çalışıyor mu?")
     @Test
     public void testGetAreaRectangle() throws NoSuchFieldException {
-        assertEquals(String.format("%.2f", rectangle.getArea()), "2.00");
+        assertEquals(String.format(Locale.US, "%.2f", rectangle.getArea()), "2.00");
     }
 
     @DisplayName("Cuboid sınıf değişkenleri doğru access modifier a sahip mi ?")
@@ -120,7 +123,7 @@ public class MainTest {
     @DisplayName("getVolume methodu Cuboid sınıfında doğru çalışıyor mu?")
     @Test
     public void testGetVolumeRectangle() throws NoSuchFieldException {
-        assertEquals(String.format("%.2f", cuboid.getVolume()), "6.00");
+        assertEquals(String.format(Locale.US, "%.2f", cuboid.getVolume()), "6.00");
     }
 
     @DisplayName("Employee sınıf değişkenleri doğru access modifier a sahip mi ?")
